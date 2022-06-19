@@ -38,8 +38,24 @@ export async function getStaticPaths() {
   };
 }
 
-function PostPage() {
-  return <main className={styles.container}></main>;
+function PostPage(props) {
+  const postRef = firestore.doc(props.path);
+  const [realtimePost] = useDocumentData(postRef);
+
+  const post = realtimePost || props.post;
+
+  return (
+    <main className={styles.container}>
+      <section>
+        <PostContent post={post} />
+      </section>
+      <aside>
+        <p>
+          <strong>{post.heartCount || 0} ❤️</strong>
+        </p>
+      </aside>
+    </main>
+  );
 }
 
 export default PostPage;
