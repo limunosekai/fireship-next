@@ -1,7 +1,13 @@
-import React from "react";
+import { AuthCheck } from "../../components";
 
 function AdminPostsPage() {
-  return <div>AdminPostsPage</div>;
+  return (
+    <main>
+      <AuthCheck>
+        <div>123</div>
+      </AuthCheck>
+    </main>
+  );
 }
 
 export default AdminPostsPage;
