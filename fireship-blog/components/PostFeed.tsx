@@ -29,10 +29,13 @@ function PostItem({ post, admin }) {
 }
 
 const PostFeed = ({ posts, admin }) => {
-  return (
-    posts &&
-    posts.map((post) => <PostItem post={post} key={post.slug} admin={admin} />)
-  );
+  if (!posts) {
+    return null;
+  }
+
+  return posts.map((post) => (
+    <PostItem post={post} key={post.slug} admin={admin} />
+  ));
 };
 
 export default PostFeed;
