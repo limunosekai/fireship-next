@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { auth, firestore, serverTimestamp } from "../../lib/firebase";
-import { AuthCheck } from "../../components";
+import { AuthCheck, ImageUploader } from "../../components";
 
 import styles from "../../styles/Admin.module.css";
 
@@ -90,6 +90,7 @@ function PostForm({ defaultValues, postRef, preview }) {
         </div>
       )}
       <div className={preview ? styles.hidden : styles.controls}>
+        <ImageUploader />
         <textarea
           name="content"
           ref={register({
