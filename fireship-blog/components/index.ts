@@ -6,3 +6,4 @@ export { default as PostContent } from "./PostContent";
 export { default as MetaTags } from "./Metatags";
 export { default as AuthCheck } from "./AuthCheck";
 export { default as ImageUploader } from "./ImageUploader";
+export { default as HeartButton } from "./HeartButton";
